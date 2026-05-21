@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercor — ModelCo Project Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div>
+        <h1>ModelCo Project Dashboard</h1>
+        <span class="subtitle">Snapshot: End of Week 2 · Goal: 600 signed-off tasks by Week 4</span>
+      </div>
+      <div class="header-meta">
+        <span id="on-track-badge"></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Summary cards -->
+    <section class="section">
+      <h2>Pipeline Summary</h2>
+      <div class="cards" id="summary-cards"></div>
+    </section>
+
+    <!-- Q1: Diagnosis -->
+    <section class="section">
+      <h2>Q1 — Diagnosis</h2>
+      <div class="workings-toggle">
+        <button class="toggle-btn" data-target="q1-workings">Show workings</button>
+      </div>
+      <div id="q1-content"></div>
+      <div id="q1-workings" class="workings hidden"></div>
+    </section>
+
+    <!-- Q2: Action Plan -->
+    <section class="section">
+      <h2>Q2 — Action Plan</h2>
+      <div class="workings-toggle">
+        <button class="toggle-btn" data-target="q2-workings">Show workings</button>
+      </div>
+      <div id="q2-content"></div>
+      <div id="q2-workings" class="workings hidden"></div>
+    </section>
+
+    <!-- Trainer table -->
+    <section class="section">
+      <h2>Trainer Data</h2>
+      <div class="table-controls">
+        <input id="trainer-search" type="text" placeholder="Search trainer..." />
+        <select id="trainer-filter">
+          <option value="all">All trainers</option>
+          <option value="high-error">High error rate (&gt;5 majors/task)</option>
+          <option value="inactive">Inactive (0 completed)</option>
+          <option value="signed-off">Has sign-offs</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table id="trainer-table">
+          <thead>
+            <tr>
+              <th>Trainer</th>
+              <th>Claimed</th>
+              <th>Completed</th>
+              <th>Fixing Done</th>
+              <th>Needs Work</th>
+              <th>Signed Off</th>
+              <th>Major Issues</th>
+              <th>Majors / Task</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="trainer-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Reviewer table -->
+    <section class="section">
+      <h2>Reviewer Data</h2>
+      <div class="table-wrap">
+        <table id="reviewer-table">
+          <thead>
+            <tr>
+              <th>Reviewer</th>
+              <th>Reviews Done</th>
+              <th>Minor Issues</th>
+              <th>Major Issues</th>
+              <th>Majors / Review</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="reviewer-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
